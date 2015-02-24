@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Logo &mdash; Lorem ipsum dolor sit amet consectetur eiusmod</title>
+
+    <meta description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim a.">
+    <meta keywords="lorem, ipsum, dolor, sit, amet">
+
+    <!--[if IE]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="touch-icon-iphone.png">
+
+  </head>
+  <body>
+<!-- container -->  
+    <div class="container">
+
+  <!-- header -->
+      <header class="inner-container clearfix">
+        <h1><a href="#" title="Homepage of Logo">Logo</a></h1>
+        <nav>
+          <ul>
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+          </ul>
+        </nav>
+      </header>
+
+    <!-- hero slider -->
+      <section class="slider">
+        <div class="inner-container">
+          <h2 class="">Our benefits</h2>
+          <p class="">Lorem ispum dolor sit hamburgefonsitiv.</p>
+        </div>
+      </section>
+
+    <!-- articles / benefits -->
+      <article class="inner-container clearfix">
+        <div class="benefits-image">
+          <img src="img/benefit_1.jpg" alt="Product is benefit for you.">
+        </div>
+        <div class="benefits">
+          <h3>Benefit #1</h3>
+          <p>Lorem ipsum dolor sit amet, <strong>consectetur adipisicing elit</strong>, sed do eiusmod tempor <em>incididunt</em> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+        </div>
+      </article>
+
+      <hr>
+
+      <article class="inner-container clearfix">
+        <div class="benefits-image benefits-right">
+          <img src="img/benefit_2.jpg" alt="Product is benefit for you.">
+        </div>
+        <div class="benefits-left">
+          <h3>Benefit #2</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat.</p>
+        </div>
+      </article>
+
+      <article class="inner-container clearfix">
+        <div class="benefits-image">
+          <img src="img/benefit_3.jpg" alt="Product is benefit for you.">
+        </div>
+        <div class="benefits">
+          <h3>Benefit #3</h3>
+          <p>Lorem ipsum dolor sit amet, onsectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+        </div>
+      </article>
+
+      <hr>
+
+    <!-- partners -->
+      <section class="inner-container partners">
+        <h3>Partners</h3>
+        <a href="#" title="Click to see more partners!" class="more clearfix">More</a>
+
+        <ul class="clearfix">
+          <li><img src="http://placehold.it/280x80" alt="Microsoft"></li>          
+          <li><img src="http://placehold.it/280x80" alt="Facebook"></li>          
+          <li><img src="http://placehold.it/280x80" alt="Google+"></li>          
+
+          <div class="more-partners">
+          <li><img src="http://placehold.it/280x80" alt="Twitter"></li>          
+          <li><img src="http://placehold.it/280x80" alt="Apple"></li>          
+          <li><img src="http://placehold.it/280x80" alt="Instagram"></li>          
+          </div>
+        </ul>
+      </section>
+
+      <!-- back to top - only visible on smaller devices -->
+      <section class="inner-container backtotop">
+        <hr>
+        <a href="#">&uarr; back to top</a>
+      </section>
+
+    </div><!-- /container -->
+
+    <!-- include the external ressources at the bottom for faster rendering -->
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:700|Merriweather:400,400italic,700" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+      /*  slider 
+          http://www.programming-free.com/2013/12/change-background-image-jquery.html
+      */
+      var i =0; 
+      var images = ['img/slide2.jpg','img/slide3.jpg','img/slide4.jpg'];
+      var image = $('.slider');
+
+      image.css('background-image', 'url(img/slide1.jpg)');
+        setInterval(function(){   
+          image.fadeTo("fast", '.9', function () {
+            image.css('background-image', 'url(' + images [i++] +')');
+          });
+          if(i == images.length)
+            i = 0;
+        }, 7000);
+
+
+      /* toggle .partners */
+      $(".more-partners").fadeOut("fast");
+      $(".more").click(function(event) {
+        $(".more-partners").fadeToggle("slow");
+        if ($(this).text() == "More") {
+          $(this).text("Less") 
+        }
+        else {
+          $(this).text("More");
+        }
+        event.preventDefault();
+      });
+
+
+      /* animeted scroll to top */
+      $('.backtotop').click(function(){
+        $('html, body').animate({scrollTop : 0});
+      });
+    });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,242 @@
+//  sass variables  
+
+$background-color: #fff;
+$text-color: #34495e;
+$link-color: #2980b9;
+$link-color-hover: #3498db;
+
+//  only for text-logo 
+
+$logo-color: #050505;
+$logo-color-hover: #674172;
+
+//  font stacks  
+
+$font-stack-text: Merriweather, "Noto Serif", serif;
+$font-stack-heading: Montserrat, "Helvetica Neue", Helvetica, sans-serif;
+
+//  mixins  
+//  easy vendor-prefixes 
+//  http://www.stefanwienert.de/blog/2012/05/18/easy-css-vendor-prefix-mixin-for-sass/ 
+
+@mixin vendor-prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
+
+body {
+  background: $background-color;
+  font: 300 16px $font-stack-text;
+  text-rendering: optimizeLegibility;
+  color: $text-color;
+}
+.container {
+  max-width: 1280px;
+  margin: 10px auto; 
+}
+.inner-container {
+  max-width: 980px;
+  margin: 20px auto; 
+}
+
+/*  header (logo + navigation)  */
+
+header {
+  // logo 
+  h1 {  display: inline }
+  h1 a, h1 a:visited {
+    display: inline;
+    font: 1em $font-stack-heading;
+    text-transform: uppercase; 
+    text-decoration: none; 
+    color: $logo-color;
+  }
+  h1 a:hover {
+    color: $logo-color-hover;
+    border: 0;
+  }
+  // navigation
+  nav { display: inline }
+  ul {
+    display: inline;
+    padding: 0;
+    list-style-type: none;
+    margin-left: 50px;
+  }
+  li {
+    display: inline;
+    padding: 0 10px;
+  }
+}
+
+a:link {
+  color: $link-color;
+  text-decoration: none; 
+  @include vendor-prefix(transition, color .2s ease-out);
+}
+a:hover {
+  color: $link-color-hover; 
+  border-bottom: 1px solid $link-color-hover;
+   @include vendor-prefix(transition, color .2s ease-in);
+}
+a:visited {
+  color: darken($link-color, 10%); 
+   @include vendor-prefix(transition, color .2s ease-in);
+}
+a:focus {
+  color: lighten($link-color-hover, 10%); 
+  border-bottom: 1px solid $link-color-hover;
+   @include vendor-prefix(transition, color .2s ease-in);
+}
+hr {
+  border: 0;
+  border-bottom: 1px dashed #ccc;
+  background: #ddd;
+}
+
+/*  micro clearfix 
+    http://nicolasgallagher.com/micro-clearfix-hack/ 
+*/
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after { clear: both }
+.clearfix { *zoom: 1 }
+
+/*  slider  */
+
+.slider {
+  height: 500px;
+  background: url("../img/slide.jpg");
+  @include vendor-prefix(background-size, cover);
+  color: #f1f1f1;
+  @include vendor-prefix(text-shadow, 0 0 5px rgba(0,0,0,.4));
+  @include vendor-prefix(box-shadow, 0 15px 15px rgba(0,0,0,.05));
+  h2 {
+    margin: 10px 0 0 0;
+    padding-top: 180px; 
+    font: 4em $font-stack-heading;
+    text-transform: uppercase;
+    @include vendor-prefix(opacity, .9);
+  }
+  p {
+    font: 1em $font-stack-text;
+    margin: 0;
+    padding: 0; 
+    text-indent: 1em;
+  }
+}
+
+/*  articles  */
+
+article {
+  padding: 35px 0;
+  .benefits-image {
+    width: 45%;
+    float: left;
+  }
+  .benefits {
+    width: 55%;
+    float: right;
+  }
+  .benefits-left {
+    width: 55%;
+    float: left;
+  }
+  .benefits-right { 
+    float: right; 
+    text-align: right;
+  }
+}
+h3 {
+  font: 2em $font-stack-heading;
+  color: #2c3e50; 
+  margin: 40px 0 0;
+  text-transform: uppercase; 
+}
+
+/*  partners  */
+
+.partners {
+  h3 { display: inline }
+  .more {
+    display: inline;
+    float: right; 
+  }
+  ul { 
+    padding: 0; 
+    text-align: center;
+  }
+  li {
+    margin: 5px;
+    display: inline;
+  }
+}
+
+/*  only visible when width <767px  */
+.backtotop { display: none }
+
+
+/*  media queries  */
+
+@media all and (max-width: 767px) {
+  body { 
+    font-size: 20px;
+    text-rendering: optimizeSpeed;
+  }  
+  header {
+    h1, nav {
+      display: block;
+      text-align: center;
+      width: 100%;
+    }
+    nav ul { margin: 0 }
+    li {
+      display: inline;
+      margin: 0 1.6% ;
+    }
+    nav li a { padding: 10px } // more tapping space for mobile view
+  }
+  .slider {
+    margin-top: 30px;
+    h2 { font-size: 2em }
+  }
+  .inner-container { width: 90% }
+  .benefits, 
+  .benefits-image,
+  .benefits-left {
+    margin: 10px auto;
+    width: 100% !important;
+  }
+  article img {
+    display: block;
+    width: 100%;
+  }
+  .partners {
+    width: 90%;
+    ul { margin: 0 }
+    li img {
+      display: block;
+      width: 100%;
+    }
+  }
+  .backtotop {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .inner-container {
+    max-width: 920px;
+    margin: 20px auto; 
+  }
+}

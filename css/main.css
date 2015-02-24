@@ -1,0 +1,221 @@
+body {
+  background: #fff;
+  font: 300 16px Merriweather, "Noto Serif", serif;
+  text-rendering: optimizeLegibility;
+  color: #34495e; }
+
+.container {
+  max-width: 1280px;
+  margin: 10px auto; }
+
+.inner-container {
+  max-width: 980px;
+  margin: 20px auto; }
+
+/*  header (logo + navigation)  */
+header h1 {
+  display: inline; }
+header h1 a, header h1 a:visited {
+  display: inline;
+  font: 1em Montserrat, "Helvetica Neue", Helvetica, sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #050505; }
+header h1 a:hover {
+  color: #674172;
+  border: 0; }
+header nav {
+  display: inline; }
+header ul {
+  display: inline;
+  padding: 0;
+  list-style-type: none;
+  margin-left: 50px; }
+header li {
+  display: inline;
+  padding: 0 10px; }
+
+a:link {
+  color: #2980b9;
+  text-decoration: none;
+  -webkit-transition: color 0.2s ease-out;
+  -ms-transition: color 0.2s ease-out;
+  -moz-transition: color 0.2s ease-out;
+  -o-transition: color 0.2s ease-out;
+  transition: color 0.2s ease-out; }
+
+a:hover {
+  color: #3498db;
+  border-bottom: 1px solid #3498db;
+  -webkit-transition: color 0.2s ease-in;
+  -ms-transition: color 0.2s ease-in;
+  -moz-transition: color 0.2s ease-in;
+  -o-transition: color 0.2s ease-in;
+  transition: color 0.2s ease-in; }
+
+a:visited {
+  color: #20638f;
+  -webkit-transition: color 0.2s ease-in;
+  -ms-transition: color 0.2s ease-in;
+  -moz-transition: color 0.2s ease-in;
+  -o-transition: color 0.2s ease-in;
+  transition: color 0.2s ease-in; }
+
+a:focus {
+  color: #5faee3;
+  border-bottom: 1px solid #3498db;
+  -webkit-transition: color 0.2s ease-in;
+  -ms-transition: color 0.2s ease-in;
+  -moz-transition: color 0.2s ease-in;
+  -o-transition: color 0.2s ease-in;
+  transition: color 0.2s ease-in; }
+
+hr {
+  border: 0;
+  border-bottom: 1px dashed #ccc;
+  background: #ddd; }
+
+/*  micro clearfix 
+    http://nicolasgallagher.com/micro-clearfix-hack/ 
+*/
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.clearfix {
+  *zoom: 1; }
+
+/*  slider  */
+.slider {
+  height: 500px;
+  background: url("../img/slide.jpg");
+  -webkit-background-size: cover;
+  -ms-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: #f1f1f1;
+  -webkit-text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  -ms-text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  -moz-text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  -o-text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 15px 15px rgba(0, 0, 0, 0.05);
+  -ms-box-shadow: 0 15px 15px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 15px 15px rgba(0, 0, 0, 0.05);
+  -o-box-shadow: 0 15px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.05); }
+  .slider h2 {
+    margin: 10px 0 0 0;
+    padding-top: 180px;
+    font: 4em Montserrat, "Helvetica Neue", Helvetica, sans-serif;
+    text-transform: uppercase;
+    -webkit-opacity: 0.9;
+    -ms-opacity: 0.9;
+    -moz-opacity: 0.9;
+    -o-opacity: 0.9;
+    opacity: 0.9; }
+  .slider p {
+    font: 1em Merriweather, "Noto Serif", serif;
+    margin: 0;
+    padding: 0;
+    text-indent: 1em; }
+
+/*  articles  */
+article {
+  padding: 35px 0; }
+  article .benefits-image {
+    width: 45%;
+    float: left; }
+  article .benefits {
+    width: 55%;
+    float: right; }
+  article .benefits-left {
+    width: 55%;
+    float: left; }
+  article .benefits-right {
+    float: right;
+    text-align: right; }
+
+h3 {
+  font: 2em Montserrat, "Helvetica Neue", Helvetica, sans-serif;
+  color: #2c3e50;
+  margin: 40px 0 0;
+  text-transform: uppercase; }
+
+/*  partners  */
+.partners h3 {
+  display: inline; }
+.partners .more {
+  display: inline;
+  float: right; }
+.partners ul {
+  padding: 0;
+  text-align: center; }
+.partners li {
+  margin: 5px;
+  display: inline; }
+
+/*  only visible when width <767px  */
+.backtotop {
+  display: none; }
+
+/*  media queries  */
+@media all and (max-width: 767px) {
+  body {
+    font-size: 20px;
+    text-rendering: optimizeSpeed; }
+
+  header h1, header nav {
+    display: block;
+    text-align: center;
+    width: 100%; }
+  header nav ul {
+    margin: 0; }
+  header li {
+    display: inline;
+    margin: 0 1.6%; }
+  header nav li a {
+    padding: 10px; }
+
+  .slider {
+    margin-top: 30px; }
+    .slider h2 {
+      font-size: 2em; }
+
+  .inner-container {
+    width: 90%; }
+
+  .benefits,
+  .benefits-image,
+  .benefits-left {
+    margin: 10px auto;
+    width: 100% !important; }
+
+  article img {
+    display: block;
+    width: 100%; }
+
+  .partners {
+    width: 90%; }
+    .partners ul {
+      margin: 0; }
+    .partners li img {
+      display: block;
+      width: 100%; }
+
+  .backtotop {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+    text-align: center; } }
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .inner-container {
+    max-width: 920px;
+    margin: 20px auto; } }
+
+/*# sourceMappingURL=main.css.map */
